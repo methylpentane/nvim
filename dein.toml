@@ -1,0 +1,120 @@
+[[plugins]] # colorscheme
+repo='cocopon/iceberg.vim'
+hook_add = '''
+    set background=dark
+    colorscheme iceberg
+'''
+[[plugins]]
+repo='jacoborus/tender.vim'
+# hook_add = '''
+#     set background=dark
+#     colorscheme tender
+# '''
+
+[[plugins]] # vim-airline
+repo='vim-airline/vim-airline'
+depend=['vim-airline/vim-airline-themes']
+depend=['preservim/nerdtree']
+hook_add='''
+    let g:airline_powerline_fonts=1
+    let g:airline#extensions#tabline#enabled=1
+    let g:airline#extensions#tabline#show_tabs=1
+    let g:airline#extensions#tabline#show_buffers=1
+    let g:airline#extensions#tabline#buffer_nr_show=1
+    let g:airline#extensions#tabline#tab_nr_type=1
+    let g:airline#extensions#tmuxline#enabled=0
+
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+    let g:airline_symbols.dirty=''
+    let g:airline_symbols.crypt=''
+    let g:airline_symbols.maxlinenr=''
+    let g:airline_left_sep=''
+    let g:airline_left_alt_sep=''
+    let g:airline_right_sep=''
+    let g:airline_right_alt_sep=''
+
+    call airline#parts#define_function('my_percentage', 'Percentage')
+    let g:airline_section_z = airline#section#create(['my_percentage', ' ', 'linenr', 'maxlinenr', ';', '%v'])
+'''
+[[plugins]] # vim-airline-theme
+repo='vim-airline/vim-airline-themes'
+hook_add='''
+    let g:airline_theme='iceberg'
+'''
+[[plugins]] # make tmux statusline conf from airlinetheme
+repo='edkolev/tmuxline.vim'
+hook_add='''
+    let g:tmuxline_preset = {
+        \'a'     : 'tmux',
+        \'b'     : ['#S'],
+        \'win'   : ['#I', '#W'],
+        \'cwin'  : ['#I', '#W'],
+        \'y'     : ['%Y/%m/%d %R'],
+        \'z'     : ['#(whoami)',' #H']}
+    let g:tmuxline_separators = {
+         \ 'left' : '',
+         \ 'left_alt' : '',
+         \ 'right' : '',
+         \ 'right_alt' : ''}
+'''
+
+[[plugins]] # enable cool icon
+repo='ryanoasis/vim-devicons'
+
+[[plugins]] # git support
+repo='tpope/vim-fugitive'
+
+[[plugins]] # another git support
+repo='airblade/vim-gitgutter'
+hook_add='''
+    set updatetime=250
+'''
+
+[[plugins]] # deoplete
+repo='Shougo/deoplete.nvim'
+hook_add='''
+    let g:deoplete#enable_at_startup=1
+    let g:auto_complete_delay = 0
+    call deoplete#custom#option('smart_case', v:true)
+'''
+
+[[plugins]] # jump
+repo='pechorin/any-jump.vim'
+
+[[plugins]] # delete whitespace
+repo='bronson/vim-trailing-whitespace'
+
+# [[plugins]] # simple filer
+# repo='cocopon/Vaffle.vim'
+# hook_add='''
+#     function! VaffleRenderCustomIcon(item)
+#         return WebDevIconsGetFileTypeSymbol(a:item.basename, a:item.is_dir)
+#     endfunction
+#     let g:vaffle_render_custom_icon = 'VaffleRenderCustomIcon'
+# '''
+
+[[plugins]] # treeview filer
+repo='preservim/nerdtree'
+hook_add='''
+    let g:NERDTreeMinimalUI=1
+    let g:NERDTreeMapActivateNode = "l"
+    let g:NERDTreeMapOpenRecursively = "L"
+    let g:NERDTreeMapCloseDir = "h"
+    let g:NERDTreeMapCloseChildren = "H"
+    let g:NERDTreeMapOpenSplit = "s"
+    let g:NERDTreeMapOpenVSplit = "v"
+'''
+
+[[plugins]] # syntax rule
+repo='sheerun/vim-polyglot'
+
+[[plugins]] # show indent level
+repo='Yggdroot/indentLine'
+hook_add='''
+    let g:indentLine_char=''
+'''
+
+[[plugins]] # surround control
+repo='tpope/vim-surround'

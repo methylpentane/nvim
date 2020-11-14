@@ -1,0 +1,21 @@
+# [[plugins]] # minimap
+# repo='hisaknown/nanomap.vim'
+# hook_add='''
+#     let g:nanomap_auto_realign=1
+#     let g:nanomap_auto_open_close=1
+#     let g:nanomap_highlight_delay=500
+# '''
+
+#                             `MM       68b
+#                       /      MM       Y89
+# ___  __     _____    /M      MM  __   ___ ___  __     __
+# `MM 6MMb   6MMMMMb  /MMMMM   MM 6MMb  `MM `MM 6MMb   6MMbMMM
+#  MMM9 `Mb 6M'   `Mb  MM      MMM9 `Mb  MM  MMM9 `Mb 6M'`Mb
+#  MM'   MM MM     MM  MM      MM'   MM  MM  MM'   MM MM  MM
+#  MM    MM MM     MM  MM      MM    MM  MM  MM    MM YM.,M9
+#  MM    MM MM     MM  MM      MM    MM  MM  MM    MM  YMM9
+#  MM    MM YM.   ,M9  YM.  ,  MM    MM  MM  MM    MM (M
+# _MM_  _MM_ YMMMMM9    YMMM9 _MM_  _MM__MM__MM_  _MM_ YMMMMb.
+#                                                     6M    Yb
+#                                                     YM.   d9
+#                                                      YMMMM9     (for now)
