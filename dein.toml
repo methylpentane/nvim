@@ -1,15 +1,20 @@
 [[plugins]] # colorscheme
 repo='cocopon/iceberg.vim'
-hook_add = '''
-    set background=dark
-    colorscheme iceberg
-'''
+# hook_add = '''
+#     set background=dark
+#     colorscheme iceberg
+# '''
 [[plugins]]
 repo='jacoborus/tender.vim'
 # hook_add = '''
 #     set background=dark
 #     colorscheme tender
 # '''
+[[plugins]]
+repo='arcticicestudio/nord-vim'
+hook_add = '''
+    colorscheme nord
+'''
 
 [[plugins]] # vim-airline
 repo='vim-airline/vim-airline'
@@ -41,7 +46,7 @@ hook_add='''
 [[plugins]] # vim-airline-theme
 repo='vim-airline/vim-airline-themes'
 hook_add='''
-    let g:airline_theme='iceberg'
+    let g:airline_theme='nord'
 '''
 [[plugins]] # make tmux statusline conf from airlinetheme
 repo='edkolev/tmuxline.vim'

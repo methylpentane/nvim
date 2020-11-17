@@ -22,10 +22,10 @@ function! Transparent() abort
     highlight CursorLine guibg=NONE
     highlight SpecialKey guibg=NONE
 endfunction
-augroup transparent
-    autocmd!
-    autocmd VimEnter * call Transparent()
-augroup END
+" augroup transparent
+"     autocmd!
+"     autocmd VimEnter * call Transparent()
+" augroup END
 
 " airline custom parts
 let s:subscripts = ['₀','₁','₂','₃','₄','₅','₆','₇','₈','₉']
