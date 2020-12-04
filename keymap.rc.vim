@@ -17,8 +17,9 @@ nnoremap <C-h> :exe("tjump ".expand('<cword>'))<CR>
 tnoremap <silent> <C-k> <C-\><C-n>
 
 " tabline
-nmap <Left> <Plug>AirlineSelectPrevTab
-nmap <Right> <Plug>AirlineSelectNextTab
+nmap th <Plug>AirlineSelectPrevTab
+nmap tl <Plug>AirlineSelectNextTab
 
 " nerdtree
 nmap <leader>t :NERDTreeToggleVCS<CR>
+nmap <leader>T :NERDTreeToggle<CR>

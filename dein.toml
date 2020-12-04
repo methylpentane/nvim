@@ -24,10 +24,9 @@ hook_add='''
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#tabline#show_tabs=1
-    let g:airline#extensions#tabline#show_buffers=1
-    let g:airline#extensions#tabline#buffer_nr_show=1
     let g:airline#extensions#tabline#tab_nr_type=1
     let g:airline#extensions#tmuxline#enabled=0
+    let g:airline#extensions#tabline#ignore_bufadd_pat = 'defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
 
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
@@ -55,7 +54,7 @@ hook_add='''
         \'a'     : 'tmux',
         \'b'     : ['#S'],
         \'win'   : ['#I', '#W'],
-        \'cwin'  : ['#I', '#W'],
+        \'cwin'  : ['#I', '#W', '#F'],
         \'y'     : ['%Y/%m/%d %R'],
         \'z'     : ['#(whoami)',' #H']}
     let g:tmuxline_separators = {
@@ -87,6 +86,9 @@ hook_add='''
 
 [[plugins]] # jump
 repo='pechorin/any-jump.vim'
+hook_add='''
+    let g:any_jump_grouping_enabled=1
+'''
 
 [[plugins]] # delete whitespace
 repo='bronson/vim-trailing-whitespace'
@@ -123,3 +125,5 @@ hook_add='''
 
 [[plugins]] # surround control
 repo='tpope/vim-surround'
+[[plugins]] # dot command onto vim-surround
+repo='tpope/vim-repeat'

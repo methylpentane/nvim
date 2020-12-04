@@ -32,3 +32,7 @@ set sidescrolloff=6
 
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
+
+set pumblend=20
+
+set clipboard+=unnamedplus

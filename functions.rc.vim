@@ -27,6 +27,16 @@ endfunction
 "     autocmd VimEnter * call Transparent()
 " augroup END
 
+" Transparent window
+augroup transparent-windows
+    autocmd!
+    autocmd Filetype deoplete set winblend=30
+augroup END
+
+" dont show trailing space error in markdown
+autocmd FileType * unlet! g:airline#extensions#whitespace#checks
+autocmd FileType markdown let g:airline#extensions#whitespace#checks = ['indent']
+
 " airline custom parts
 let s:subscripts = ['₀','₁','₂','₃','₄','₅','₆','₇','₈','₉']
 function! Percentage() abort
