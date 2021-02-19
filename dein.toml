@@ -16,6 +16,9 @@ hook_add = '''
     colorscheme nord
 '''
 
+[[plugins]]
+repo='ulwlu/elly.vim'
+
 [[plugins]] # vim-airline
 repo='vim-airline/vim-airline'
 depend=['vim-airline/vim-airline-themes']
@@ -24,6 +27,7 @@ hook_add='''
     let g:airline_powerline_fonts=1
     let g:airline#extensions#tabline#enabled=1
     let g:airline#extensions#tabline#show_tabs=1
+    let g:airline#extensions#tabline#show_buffers=0
     let g:airline#extensions#tabline#tab_nr_type=1
     let g:airline#extensions#tmuxline#enabled=0
     let g:airline#extensions#tabline#ignore_bufadd_pat = 'defx|gundo|nerd_tree|startify|tagbar|undotree|vimfiler'
@@ -34,10 +38,10 @@ hook_add='''
     let g:airline_symbols.dirty=''
     let g:airline_symbols.crypt=''
     let g:airline_symbols.maxlinenr=''
-    let g:airline_left_sep=''
-    let g:airline_left_alt_sep=''
-    let g:airline_right_sep=''
-    let g:airline_right_alt_sep=''
+    let g:airline_left_sep=''
+    let g:airline_left_alt_sep=''
+    let g:airline_right_sep=''
+    let g:airline_right_alt_sep=''
 
     call airline#parts#define_function('my_percentage', 'Percentage')
     let g:airline_section_z = airline#section#create(['my_percentage', ' ', 'linenr', 'maxlinenr', ';', '%v'])
@@ -58,10 +62,10 @@ hook_add='''
         \'y'     : ['%Y/%m/%d %R'],
         \'z'     : ['#(whoami)',' #H']}
     let g:tmuxline_separators = {
-         \ 'left' : '',
-         \ 'left_alt' : '',
-         \ 'right' : '',
-         \ 'right_alt' : ''}
+         \ 'left' : '',
+         \ 'left_alt' : '',
+         \ 'right' : '',
+         \ 'right_alt' : ''}
 '''
 
 [[plugins]] # enable cool icon
@@ -116,6 +120,9 @@ hook_add='''
 
 [[plugins]] # syntax rule
 repo='sheerun/vim-polyglot'
+hook_add='''
+    let g:polyglot_disabled = ['markdown']
+'''
 
 [[plugins]] # show indent level
 repo='Yggdroot/indentLine'

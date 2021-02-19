@@ -9,10 +9,10 @@ function! s:execute_ctags() abort
     let tags_dirpath = fnamemodify(tags_path, ':p:h')
     execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
 endfunction
-augroup ctags
-    autocmd!
-    autocmd BufWritePost * call s:execute_ctags()
-augroup END
+" augroup ctags
+"     autocmd!
+"     autocmd BufWritePost * call s:execute_ctags()
+" augroup END
 
 " transparent background
 function! Transparent() abort
@@ -28,14 +28,32 @@ endfunction
 " augroup END
 
 " Transparent window
-augroup transparent-windows
+augroup transparent_windows
     autocmd!
     autocmd Filetype deoplete set winblend=30
 augroup END
 
-" dont show trailing space error in markdown
-autocmd FileType * unlet! g:airline#extensions#whitespace#checks
-autocmd FileType markdown let g:airline#extensions#whitespace#checks = ['indent']
+" rsync
+function! s:execute_rsync(...) abort
+    let rsync_name = '.rsync_autocmd'
+    let rsync_path = findfile(rsync_name, '.;')
+    if rsync_path ==# ''
+        return
+    endif
+    let lines = readfile(rsync_path)
+    let line = get(lines, 0)
+    if a:0 > 0
+        if a:1 == 'Dry'
+            execute '!rsync -ahvn' line
+        else
+            echo '有効でない引数'
+        end
+    else
+        execute '!rsync -ahvz' line
+    end
+endfunction
+command! Rsync call s:execute_rsync()
+command! DryRsync call s:execute_rsync('Dry')
 
 " airline custom parts
 let s:subscripts = ['₀','₁','₂','₃','₄','₅','₆','₇','₈','₉']
