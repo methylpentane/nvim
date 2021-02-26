@@ -1,4 +1,6 @@
-[[plugins]] # colorscheme
+# vim:set foldmethod=marker:
+# colorschemes {{{
+[[plugins]]
 repo='cocopon/iceberg.vim'
 # hook_add = '''
 #     set background=dark
@@ -6,19 +8,21 @@ repo='cocopon/iceberg.vim'
 # '''
 [[plugins]]
 repo='jacoborus/tender.vim'
-# hook_add = '''
-#     set background=dark
-#     colorscheme tender
-# '''
+hook_add = '''
+    set background=dark
+    colorscheme tender
+'''
 [[plugins]]
 repo='arcticicestudio/nord-vim'
-hook_add = '''
-    colorscheme nord
-'''
+# hook_add = '''
+#     colorscheme nord
+# '''
 
 [[plugins]]
 repo='ulwlu/elly.vim'
+# }}}
 
+# Airline and appearance {{{
 [[plugins]] # vim-airline
 repo='vim-airline/vim-airline'
 depend=['vim-airline/vim-airline-themes']
@@ -38,10 +42,10 @@ hook_add='''
     let g:airline_symbols.dirty=''
     let g:airline_symbols.crypt=''
     let g:airline_symbols.maxlinenr=''
-    let g:airline_left_sep=''
-    let g:airline_left_alt_sep=''
-    let g:airline_right_sep=''
-    let g:airline_right_alt_sep=''
+    let g:airline_left_sep=''
+    let g:airline_left_alt_sep=''
+    let g:airline_right_sep=''
+    let g:airline_right_alt_sep=''
 
     call airline#parts#define_function('my_percentage', 'Percentage')
     let g:airline_section_z = airline#section#create(['my_percentage', ' ', 'linenr', 'maxlinenr', ';', '%v'])
@@ -49,36 +53,45 @@ hook_add='''
 [[plugins]] # vim-airline-theme
 repo='vim-airline/vim-airline-themes'
 hook_add='''
-    let g:airline_theme='nord'
+    let g:airline_theme='tender'
 '''
 [[plugins]] # make tmux statusline conf from airlinetheme
 repo='edkolev/tmuxline.vim'
 hook_add='''
     let g:tmuxline_preset = {
-        \'a'     : 'tmux',
+        \'a'     : '#[bold]TMUX',
         \'b'     : ['#S'],
         \'win'   : ['#I', '#W'],
         \'cwin'  : ['#I', '#W', '#F'],
         \'y'     : ['%Y/%m/%d %R'],
         \'z'     : ['#(whoami)',' #H']}
     let g:tmuxline_separators = {
-         \ 'left' : '',
-         \ 'left_alt' : '',
-         \ 'right' : '',
-         \ 'right_alt' : ''}
+         \ 'left' : '',
+         \ 'left_alt' : '',
+         \ 'right' : '',
+         \ 'right_alt' : ''}
+'''
+
+[[plugins]] # show indent level
+repo='Yggdroot/indentLine'
+hook_add='''
+    let g:indentLine_char=''
 '''
 
 [[plugins]] # enable cool icon
 repo='ryanoasis/vim-devicons'
+# }}}
 
-[[plugins]] # git support
+# git support {{{
+[[plugins]]
 repo='tpope/vim-fugitive'
 
-[[plugins]] # another git support
+[[plugins]]
 repo='airblade/vim-gitgutter'
 hook_add='''
     set updatetime=250
 '''
+# }}}
 
 [[plugins]] # deoplete
 repo='Shougo/deoplete.nvim'
@@ -122,12 +135,6 @@ hook_add='''
 repo='sheerun/vim-polyglot'
 hook_add='''
     let g:polyglot_disabled = ['markdown']
-'''
-
-[[plugins]] # show indent level
-repo='Yggdroot/indentLine'
-hook_add='''
-    let g:indentLine_char=''
 '''
 
 [[plugins]] # surround control

@@ -22,10 +22,10 @@ function! Transparent() abort
     highlight CursorLine guibg=NONE
     highlight SpecialKey guibg=NONE
 endfunction
-" augroup transparent
-"     autocmd!
-"     autocmd VimEnter * call Transparent()
-" augroup END
+augroup transparent
+    autocmd!
+    autocmd VimEnter * call Transparent()
+augroup END
 
 " Transparent window
 augroup transparent_windows
