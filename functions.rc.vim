@@ -55,6 +55,18 @@ endfunction
 command! Rsync call s:execute_rsync()
 command! DryRsync call s:execute_rsync('Dry')
 
+" session load&save
+function! s:save_session() abort
+    let session_path = '/home/okc/vim-sessions/'.substitute(getcwd(), '[/|.]', '_', 'g')
+    execute 'mksession!' session_path
+endfunction
+function! s:load_session() abort
+    let session_path = '/home/okc/vim-sessions/'.substitute(getcwd(), '[/|.]', '_', 'g')
+    execute 'source' session_path
+endfunction
+command! SaveSession call s:save_session()
+command! LoadSession call s:load_session()
+
 " airline custom parts
 let s:subscripts = ['₀','₁','₂','₃','₄','₅','₆','₇','₈','₉']
 function! Percentage() abort
