@@ -93,6 +93,7 @@ hook_add='''
 '''
 # }}}
 
+# other utilities {{{
 [[plugins]] # deoplete
 repo='Shougo/deoplete.nvim'
 hook_add='''
@@ -141,3 +142,10 @@ hook_add='''
 repo='tpope/vim-surround'
 [[plugins]] # dot command onto vim-surround
 repo='tpope/vim-repeat'
+
+[[plugins]] # comment-out command
+repo='tpope/vim-commentary'
+
+[[plugins]] # auto close
+repo='cohama/lexima.vim'
+# }}}

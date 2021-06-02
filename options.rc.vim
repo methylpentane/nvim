@@ -31,7 +31,7 @@ set scrolloff=5
 set sidescrolloff=6
 
 set fileformats=unix,dos,mac
-set fileencodings=utf-8,sjis
+set fileencodings=utf-8,cp932,sjis,euc-jp
 
 set pumblend=20
 
