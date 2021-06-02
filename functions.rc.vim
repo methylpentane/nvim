@@ -57,11 +57,11 @@ command! DryRsync call s:execute_rsync('Dry')
 
 " session load&save
 function! s:save_session() abort
-    let session_path = '/home/okc/vim-sessions/'.substitute(getcwd(), '[/|.]', '_', 'g')
+    let session_path = $HOME.'/vim-sessions/'.substitute(getcwd(), '[/|.]', '_', 'g')
     execute 'mksession!' session_path
 endfunction
 function! s:load_session() abort
-    let session_path = '/home/okc/vim-sessions/'.substitute(getcwd(), '[/|.]', '_', 'g')
+    let session_path = $HOME.'/vim-sessions/'.substitute(getcwd(), '[/|.]', '_', 'g')
     execute 'source' session_path
 endfunction
 command! SaveSession call s:save_session()
