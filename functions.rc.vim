@@ -33,6 +33,12 @@ augroup transparent_windows
     autocmd Filetype deoplete set winblend=30
 augroup END
 
+" wrap at text file
+augroup wrapping
+    autocmd!
+    autocmd Filetype text set wrap
+augroup END
+
 " rsync
 function! s:execute_rsync(...) abort
     let rsync_name = '.rsync_autocmd'
