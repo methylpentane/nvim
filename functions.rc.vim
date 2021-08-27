@@ -37,6 +37,7 @@ augroup END
 augroup wrapping
     autocmd!
     autocmd Filetype text set wrap
+    autocmd Filetype markdown set wrap
 augroup END
 
 " rsync
@@ -72,6 +73,14 @@ function! s:load_session() abort
 endfunction
 command! SaveSession call s:save_session()
 command! LoadSession call s:load_session()
+
+" folding
+augroup folding
+    autocmd!
+    autocmd BufWinLeave * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    autocmd BufWinEnter * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
+augroup END
+set viewoptions-=options
 
 " airline custom parts
 let s:subscripts = ['₀','₁','₂','₃','₄','₅','₆','₇','₈','₉']
