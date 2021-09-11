@@ -77,8 +77,8 @@ command! LoadSession call s:load_session()
 " folding
 augroup folding
     autocmd!
-    autocmd BufWinLeave * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
-    autocmd BufWinEnter * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
+    autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
+    autocmd BufRead * if expand('%') != '' && &buftype !~ 'nofile' | silent! loadview | endif
 augroup END
 set viewoptions-=options
 
