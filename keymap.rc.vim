@@ -8,8 +8,10 @@ nnoremap <C-n> <C-d>
 " instant buffer list
 nnoremap gb :ls<CR>:
 
-" turn off search highlight
-nnoremap <C-k><C-k> :nohlsearch<CR>
+" search
+nnoremap <silent> <C-k><C-k> :nohlsearch<CR>
+nnoremap <silent> n n
+nnoremap <silent> N N
 
 " tagjump
 nnoremap <C-h> :exe("tjump ".expand('<cword>'))<CR>
@@ -18,14 +20,16 @@ nnoremap <C-h> :exe("tjump ".expand('<cword>'))<CR>
 tnoremap <silent> <C-k> <C-\><C-n>
 
 " window
-nnoremap <leader>w <C-w>
+nnoremap [window] <C-w>
+nmap <leader>w [window]
+nnoremap <silent> [window]m :call MaximizeWindow()<CR>
 
 " tab, tabline
 nmap th <Plug>AirlineSelectPrevTab
 nmap tl <Plug>AirlineSelectNextTab
-nnoremap tn :tabnew<CR>
-nnoremap tc :tabclose<CR>
+nnoremap <silent> tn :tabnew<CR>
+nnoremap <silent> tc :tabclose<CR>
 
 " nerdtree
-nmap <leader>t :NERDTreeToggleVCS<CR>
-nmap <leader>T :NERDTreeToggle<CR>
+nnoremap <silent> <leader>t :NERDTreeToggleVCS<CR>
+nnoremap <silent> <leader>T :NERDTreeToggle<CR>

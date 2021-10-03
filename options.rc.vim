@@ -36,3 +36,9 @@ set fileencodings=utf-8,cp932,sjis,euc-jp
 set pumblend=20
 
 set clipboard+=unnamedplus
+
+" neovide
+set guifont=PlemolJP\ Console\ Text:h12
+let g:neovide_cursor_vfx_mode = "ripple"
+let g:neovide_fullscreen = v:true
+let g:neovide_cursor_trail_length=0

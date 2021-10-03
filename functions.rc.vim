@@ -22,10 +22,10 @@ function! Transparent() abort
     highlight CursorLine guibg=NONE
     highlight SpecialKey guibg=NONE
 endfunction
-augroup transparent
-    autocmd!
-    autocmd VimEnter * call Transparent()
-augroup END
+" augroup transparent
+"     autocmd!
+"     autocmd VimEnter * call Transparent()
+" augroup END
 
 " Transparent window
 augroup transparent_windows
@@ -74,7 +74,7 @@ endfunction
 command! SaveSession call s:save_session()
 command! LoadSession call s:load_session()
 
-" folding
+" save fold when :w
 augroup folding
     autocmd!
     autocmd BufWritePost * if expand('%') != '' && &buftype !~ 'nofile' | mkview | endif
@@ -90,4 +90,18 @@ function! Percentage() abort
     let percent = ( cursor_line_loc*100 ) / buf_line_num
     let percent_point= ( ( cursor_line_loc*100 ) % buf_line_num )*10 / buf_line_num
     return printf("%d.%s%%", percent, get(s:subscripts, percent_point, ''))
+endfunction
+
+" window maximization
+function! MaximizeWindow()
+    :resize
+    :vertical resize
+endfunction
+
+" fcitx
+function! ImeOn()
+    execute '!fcitx-remote -o'
+endfunction
+function! ImeOff()
+    execute '!fcitx-remote -c'
 endfunction
