@@ -42,3 +42,8 @@ set guifont=PlemolJP\ Console\ Text:h12
 let g:neovide_cursor_vfx_mode = "ripple"
 let g:neovide_fullscreen = v:true
 let g:neovide_cursor_trail_length=0
+
+if has('persistent_undo')
+    set undodir=~/.config/nvim/undo
+    set undofile
+endif
