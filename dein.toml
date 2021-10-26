@@ -20,6 +20,9 @@ repo='arcticicestudio/nord-vim'
 
 [[plugins]]
 repo='ulwlu/elly.vim'
+
+[[plugins]]
+repo='NLKNguyen/papercolor-theme'
 # }}}
 
 # Airline and appearance {{{

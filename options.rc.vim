@@ -47,3 +47,7 @@ if has('persistent_undo')
     set undodir=~/.config/nvim/undo
     set undofile
 endif
+
+set number relativenumber
+
+set foldmethod=marker
