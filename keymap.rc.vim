@@ -1,9 +1,9 @@
 let mapleader = "\<Space>"
 
 inoremap <C-k> <ESC>
+nnoremap <C-n> <C-d>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-nnoremap <C-n> <C-d>
 
 " instant buffer list
 nnoremap gb :ls<CR>:

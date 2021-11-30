@@ -1,0 +1,22 @@
+# This tmux statusbar config was created by tmuxline.vim
+# on 金, 20 11月 2020
+# ﯂
+set -g status-justify "centre"
+set -g status "on"
+set -g status-left-style "none"
+set -g message-command-style "fg=#e4e4e4,bg=#005f87"
+set -g status-right-style "none"
+set -g pane-active-border-style "fg=#005f87"
+set -g status-style "none,bg=#005f87"
+set -g message-style "fg=#e4e4e4,bg=#005f87"
+set -g pane-border-style "fg=#005f87"
+set -g status-right-length "100"
+set -g status-left-length "100"
+setw -g window-status-activity-style "underscore,fg=#e4e4e4,bg=#005f87"
+setw -g window-status-separator ""
+setw -g window-status-style "none,fg=#e4e4e4,bg=#005f87"
+set -g status-left "#[fg=#444444,bg=#e4e4e4,bold] TMUX #[fg=#e4e4e4,bg=#0087af,nobold]  #S "
+set -g status-right "#[fg=#e4e4e4,bg=#005f87] %Y/%m/%d %R #[fg=#e4e4e4,bg=#0087af]#{battery_icon_status} #{battery_icon_charge}  #{battery_percentage} #[fg=#444444,bg=#e4e4e4]  #(whoami)  #H "
+setw -g window-status-format "#[fg=#e4e4e4,bg=#005f87] #I - #W "
+setw -g window-status-current-format "#[fg=#005f87,bg=#e4e4e4] #I - #W  "
+# setw -g window-status-current-format "#[fg=#005f87,bg=#e4e4e4] #I - #W  "

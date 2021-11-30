@@ -100,6 +100,21 @@ endfunction
 
 " fcitx
 if executable('fcitx5')
-    autocmd InsertLeave * :call system('fcitx5-remote -c')
-    autocmd CmdlineLeave * :call system('fcitx5-remote -c')
+    augroup fcitx
+        autocmd!
+        autocmd InsertLeave * :call system('fcitx5-remote -c')
+    augroup END
 endif
+
+" colorscheme
+function! Tender()
+    :colorscheme tender
+    :AirlineTheme tender
+    :set background=dark
+endfunction
+
+function! Papercolor()
+    :colorscheme PaperColor
+    :AirlineTheme papercolor
+    :set background=light
+endfunction
