@@ -105,6 +105,18 @@ hook_add='''
     call deoplete#custom#option('smart_case', v:true)
 '''
 
+[[plugins]] # deoppet
+repo='Shougo/deoppet.nvim'
+hook_add='''
+    call deoppet#initialize()
+    call deoppet#custom#option('snippets',
+    \ map(globpath(&runtimepath, 'neosnippets', 1, 1),
+    \     { _, val -> { 'path': val } }))
+'''
+
+[[plugins]]
+repo='Shougo/neosnippet-snippets'
+
 [[plugins]] # jump
 repo='pechorin/any-jump.vim'
 hook_add='''

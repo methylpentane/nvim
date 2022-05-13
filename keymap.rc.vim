@@ -33,3 +33,10 @@ nnoremap <silent> tc :tabclose<CR>
 " nerdtree
 nnoremap <silent> <leader>t :NERDTreeToggleVCS<CR>
 nnoremap <silent> <leader>T :NERDTreeToggle<CR>
+
+" deoppet
+imap <C-h> <Plug>(deoppet_expand)
+imap <C-f> <Plug>(deoppet_jump_forward)
+imap <C-b> <Plug>(deoppet_jump_backward)
+smap <C-f> <Plug>(deoppet_jump_forward)
+smap <C-b> <Plug>(deoppet_jump_backward)

@@ -1,3 +1,8 @@
 [[plugins]] # jedi
 repo='davidhalter/jedi-vim'
 on_ft='python'
+
+# [[plugins]]
+# repo = 'methylpentane/mysnippets_python3'
+# on_ft =' python'
+# depends = ['deoppet.nvim']
