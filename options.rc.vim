@@ -48,4 +48,4 @@ if has('persistent_undo')
     set undofile
 endif
 
-set foldmethod=marker
+" set foldmethod=marker
