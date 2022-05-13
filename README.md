@@ -3,7 +3,9 @@ this is repository for me
 - neovimのappimageを落とす
 - なんとかしてpath通す
 - このリポジトリをconfigにクローン
-- pythonにdeopleteとjediの依存を入れる `pip install neovim jedi`
+- python3にdeopleteとjediの依存を入れる `pip3 install neovim jedi`
 - クリップボードアプリを入ってなかったら入れる(xselなど)
-- for_tmuxというやつはホームに入れてtmux用にする
+- for_tmuxの中身をいい感じにシンボリックリンクする
+    - `.tmux.conf` と `.tmux_batt_icon` はそのままリンク
+    - 使いたいカラースキームの`.tmuxline`をリンク
 おわり
