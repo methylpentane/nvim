@@ -8,10 +8,10 @@ repo='cocopon/iceberg.vim'
 # '''
 [[plugins]]
 repo='jacoborus/tender.vim'
-hook_add = '''
-    set background=dark
-    colorscheme tender
-'''
+# hook_add = '''
+#     set background=dark
+#     colorscheme tender
+# '''
 [[plugins]]
 repo='arcticicestudio/nord-vim'
 # hook_add = '''
@@ -23,6 +23,14 @@ repo='ulwlu/elly.vim'
 
 [[plugins]]
 repo='NLKNguyen/papercolor-theme'
+hook_add = '''
+    if getenv('TERMINAL') == 'guake'
+        set background=dark
+    else
+        set background=light
+    endif
+    colorscheme PaperColor
+'''
 # }}}
 
 # Airline and appearance {{{
@@ -56,7 +64,7 @@ hook_add='''
 [[plugins]] # vim-airline-theme
 repo='vim-airline/vim-airline-themes'
 hook_add='''
-    let g:airline_theme='tender'
+    let g:airline_theme='papercolor'
 '''
 [[plugins]] # make tmux statusline conf from airlinetheme
 repo='edkolev/tmuxline.vim'
@@ -78,7 +86,7 @@ hook_add='''
 [[plugins]] # show indent level
 repo='Yggdroot/indentLine'
 hook_add='''
-    let g:indentLine_char=''
+    let g:indentLine_char_list=['|','¦','┆','┊']
 '''
 
 [[plugins]] # enable cool icon
