@@ -15,17 +15,14 @@ endfunction
 " augroup END
 
 " transparent background
-function! Transparent() abort
+function! s:transparent() abort
     highlight Normal guibg=NONE
     highlight NonText guibg=NONE
     highlight EndOfBuffer guibg=NONE
     highlight CursorLine guibg=NONE
     highlight SpecialKey guibg=NONE
 endfunction
-" augroup transparent
-"     autocmd!
-"     autocmd VimEnter * call Transparent()
-" augroup END
+command! Transparent call s:transparent()
 
 " Transparent window
 augroup transparent_windows
