@@ -31,7 +31,7 @@ set scrolloff=5
 set sidescrolloff=6
 
 set fileformats=unix,dos,mac
-set fileencodings=utf-8,cp932,sjis,euc-jp
+set fileencodings=utf-8,cp932,sjis,euc-jp,utf-16le,ascii
 
 set pumblend=20
 
@@ -48,4 +48,4 @@ if has('persistent_undo')
     set undofile
 endif
 
-" set foldmethod=marker
+set foldmethod=marker
