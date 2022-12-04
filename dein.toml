@@ -8,10 +8,10 @@ repo='cocopon/iceberg.vim'
 # '''
 [[plugins]]
 repo='jacoborus/tender.vim'
-# hook_add = '''
-#     set background=dark
-#     colorscheme tender
-# '''
+hook_add = '''
+    set background=dark
+    colorscheme tender
+'''
 [[plugins]]
 repo='arcticicestudio/nord-vim'
 # hook_add = '''
@@ -19,18 +19,15 @@ repo='arcticicestudio/nord-vim'
 # '''
 
 [[plugins]]
-repo='ulwlu/elly.vim'
-
-[[plugins]]
 repo='NLKNguyen/papercolor-theme'
-hook_add = '''
-    if getenv('TERMINAL') == 'guake'
-        set background=dark
-    else
-        set background=light
-    endif
-    colorscheme PaperColor
-'''
+# hook_add = '''
+#     if getenv('TERMINAL') == 'guake'
+#         set background=dark
+#     else
+#         set background=light
+#     endif
+#     colorscheme PaperColor
+# '''
 # }}}
 
 # Airline and appearance {{{
@@ -64,7 +61,7 @@ hook_add='''
 [[plugins]] # vim-airline-theme
 repo='vim-airline/vim-airline-themes'
 hook_add='''
-    let g:airline_theme='papercolor'
+    let g:airline_theme='tender'
 '''
 [[plugins]] # make tmux statusline conf from airlinetheme
 repo='edkolev/tmuxline.vim'
@@ -171,4 +168,7 @@ repo='tpope/vim-commentary'
 
 [[plugins]] # auto close
 repo='cohama/lexima.vim'
+
+[[plugins]] # align
+repo='junegunn/vim-easy-align'
 # }}}

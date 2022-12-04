@@ -40,3 +40,7 @@ imap <C-f> <Plug>(deoppet_jump_forward)
 imap <C-b> <Plug>(deoppet_jump_backward)
 smap <C-f> <Plug>(deoppet_jump_forward)
 smap <C-b> <Plug>(deoppet_jump_backward)
+
+" align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
